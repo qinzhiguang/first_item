@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       #imgs{
+           display: flex;
+       
+       }
+       .annimation{
+        animation:m_left 10s linear infinite;
+       }
+       #imgs img{
+           width: 200px;
+           height: 280px;
+           margin-right: 20px;
+       }
+       #imgs img:hover{
+           transform:rotateZ(360deg) translate3d(0,20px,60px);
+           transition: transform 2s 
+       }
+       @keyframes m_left{
+           0% {margin-left: 0}
+           100%{margin-left:-2000px }
+       }
+
+    </style>
+</head>
+<body style="background-color:#000">
+    <div class="bg">
+        
+            <ul id="imgs" class="annimation">
+                <img src="img/timg (1).jpg" alt="">
+                <img src="img/timg (2).jpg" alt="">
+                <img src="img/timg (3).jpg" alt="">
+                <img src="img/timg (4).jpg" alt="">
+                <img src="img/timg (5).jpg" alt="">
+                <img src="img/timg (6).jpg" alt="">
+                <img src="img/timg (7).jpg" alt="">
+                <img src="img/timg (8).jpg" alt="">     
+            </ul>
+      
+    </div>
+    <script>
+        var ul=document.getElementById("imgs");
+        console.log(ul)
+      setInterval(function(){
+            ul.className="";
+            setTimeout(function(){
+                ul.className="annimation"
+            },5)
+
+        },5000)
+        ul.onmouseenter=function(){
+            this.style.animationPlayState="paused"  
+        }
+        ul.onmouseleave=function(){
+            this.style.animationPlayState="running"
+        }
+        
+    </script>
+</body>
+</html>
